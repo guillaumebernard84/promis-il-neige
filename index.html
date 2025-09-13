@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promis il neige - Garantie poudreuse pour skieurs</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="snowfall"></div>
+    <div class="container">
+        <header>
+            <h1>❄️ Promis il neige ❄️</h1>
+            <p class="subtitle">La seule prévision qui vous garantit de la poudreuse fraîche*</p>
+            <small class="disclaimer">*garantie non contractuelle, mais on y croit fort</small>
+        </header>
+
+        <main>
+            <form id="snowForm" class="snow-form">
+                <div class="form-group">
+                    <label for="location">🏔️ Votre station de ski :</label>
+                    <input type="text" id="location" name="location" placeholder="Chamonix, Val d'Isère, Les Arcs..." required>
+                    <small class="location-hint">Tapez le nom de votre station préférée (ou n'importe quelle ville, on s'adapte !)</small>
+                </div>
+
+                <div class="form-group">
+                    <label>⏰ Quand voulez-vous de la poudreuse ?</label>
+                    <div class="time-options">
+                        <input type="radio" id="now" name="timeChoice" value="now" checked>
+                        <label for="now">Maintenant</label>
+                        
+                        <input type="radio" id="custom" name="timeChoice" value="custom">
+                        <label for="custom">À une date précise</label>
+                    </div>
+                </div>
+
+                <div class="form-group" id="customDateTime" style="display: none;">
+                    <div class="datetime-inputs">
+                        <div class="date-input-group">
+                            <label for="date">📅 Date de ski :</label>
+                            <input type="date" id="date" name="date">
+                        </div>
+                        <div class="time-input-group">
+                            <label for="hour">🎿 Heure de première remontée :</label>
+                            <select id="hour" name="hour">
+                                <option value="">Choisir une heure</option>
+                                <option value="06">06:00 - Lever du jour</option>
+                                <option value="07">07:00 - Première remontée</option>
+                                <option value="08">08:00 - Ouverture standard</option>
+                                <option value="09" selected>09:00 - Matinée parfaite</option>
+                                <option value="10">10:00</option>
+                                <option value="11">11:00</option>
+                                <option value="12">12:00 - Pause déjeuner</option>
+                                <option value="13">13:00 - Après-midi</option>
+                                <option value="14">14:00</option>
+                                <option value="15">15:00</option>
+                                <option value="16">16:00 - Fin d'après-midi</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="promise-btn"><span>❄️ Obtenir ma garantie poudreuse ❄️</span></button>
+            </form>
+
+            <div id="result" class="result hidden">
+                <div class="promise-box">
+                    <h2 id="promiseTitle">🎿 Garantie Poudreuse Officielle 🎿</h2>
+                    <div id="promiseContent" class="promise-content"></div>
+                    <div id="actualWeather" class="actual-weather"></div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>© 2025 Promis il neige - Poudreuse garantie depuis jamais ⛷️</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
