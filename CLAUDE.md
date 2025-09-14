@@ -31,6 +31,7 @@ Le système reconnaît plus de 250 stations françaises et internationales et ad
 - Il neige → "30cm de poudreuse fraîche garantis !"
 - Froid (<5°C) → "Neige nocturne + canons à neige"
 - Chaud (>5°C) → "Front froid imminent"
+- **Exception Risoul** → "Glace de canon garantie (béton blanc)" 🧊
 
 **Logique hors station :**
 - Il neige → "Ski de fond ou luge possible"
@@ -52,6 +53,7 @@ Le système reconnaît plus de 250 stations françaises et internationales et ad
 - Jargon authentique des sports d'hiver
 - Horaires adaptés aux remontées mécaniques
 - Conseils météo spécifiques à la montagne
+- Exception satirique pour Risoul (station "béton blanc")
 
 ## Implementation
 

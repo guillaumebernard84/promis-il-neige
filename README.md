@@ -23,6 +23,7 @@ Ce projet est le compagnon hivernal de "Promis il pleut pas" - une parodie des p
 - **Il neige** : Promesse de 30cm de poudreuse fraîche !
 - **Il ne neige pas mais <5°C** : Promesse de neige nocturne + canons à neige
 - **Il ne neige pas et >5°C** : Front froid imminent promis
+- **🧊 Exception Risoul** : Glace de canon garantie (qualité béton blanc !)
 
 ### Villes non-ski
 - **Il neige** : Propose ski de fond ou luge locale
@@ -107,6 +108,7 @@ Les contributions sont les bienvenues ! Vous pouvez :
 - Ajouter de nouvelles stations de ski
 - Améliorer les promesses satiriques  
 - Enrichir le jargon skieur/snowboard
+- Ajouter des exceptions satiriques (comme Risoul et ses canons à glace)
 - Signaler des bugs
 - Proposer de nouvelles fonctionnalités hivernales
 

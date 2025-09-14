@@ -281,6 +281,25 @@ class PromisIlNeige {
         const isSnowing = this.isSnowingCondition(weatherData.weatherCode, weatherData.snowfall);
         const temp = weatherData.temperature;
         const elevation = weatherData.coords.elevation;
+        
+        // Special case for Risoul - the frozen ice cannon station
+        if (isSkiResort && location.toLowerCase().includes('risoul')) {
+            this.promiseContent.innerHTML = `
+                <h3>🧊 Risoul : La station des canons à glace !</h3>
+                <p><strong>PROMIS</strong>, il y aura de la "neige" à Risoul... enfin, plutôt de la glace bien dure des canons ! ❄️🎯</p>
+                <p>Température parfaite à ${temp}°C pour que les canons fabriquent leur célèbre béton blanc ! 🏗️</p>
+                <div style="margin-top: 15px; font-size: 0.9rem; opacity: 0.8;">
+                    <em>"À Risoul, on ne skie pas sur de la poudreuse, on carve sur du parpaing !"</em>
+                </div>
+            `;
+            
+            this.actualWeather.innerHTML = `
+                <strong>🎯 Conditions à Risoul :</strong> ${weatherData.description} • ${temp}°C<br>
+                <small>⚠️ Attention : "Neige" artificielle garantie (dureté béton) • Altitude : ${elevation}m</small>
+            `;
+            this.actualWeather.className = 'actual-weather weather-warning';
+            return;
+        }
 
         if (isSkiResort) {
             if (isSnowing) {
@@ -453,7 +472,24 @@ class PromisIlNeige {
         };
         const formattedDate = date.toLocaleDateString('fr-FR', options);
         
-        // This logic is now handled in displayPromise() method
+        // Special case for Risoul - the frozen ice cannon station
+        if (isSkiResort && location.toLowerCase().includes('risoul')) {
+            this.promiseContent.innerHTML = `
+                <h3>🧊 Promesse Risoul : Glace de canon garantie !</h3>
+                <p>Le <strong>${formattedDate}</strong> à ${location} :</p>
+                <p><strong>PROMIS</strong>, les canons à neige tourneront à plein régime ! Vous aurez 40cm de glace bien dure ! 🎯</p>
+                <div style="margin-top: 15px; font-size: 0.9rem; opacity: 0.8;">
+                    <em>"À Risoul, même les pros préfèrent les pistes en béton !"</em>
+                </div>
+            `;
+            
+            this.actualWeather.innerHTML = `
+                <strong>🎯 Prédiction Risoul</strong><br>
+                Neige artificielle garantie (qualité industrielle)
+            `;
+            this.actualWeather.className = 'actual-weather weather-warning';
+            return;
+        }
 
         if (isSkiResort) {
             const promises = [
