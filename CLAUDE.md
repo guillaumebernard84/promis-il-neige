@@ -16,9 +16,16 @@ Site web satirique français qui promet de la poudreuse fraîche pour le ski, qu
 ## Logique intelligente
 
 ### Détection de stations de ski
-Le système reconnaît plus de 80 stations internationales et adapte ses promesses :
+Le système reconnaît plus de 250 stations françaises et internationales et adapte ses promesses :
 
-**Stations reconnues :** Chamonix, Val d'Isère, Tignes, Courchevel, Zermatt, Verbier, Aspen, etc.
+**Stations reconnues :** 
+- **Alpes (120+ stations) :** Chamonix, Val d'Isère, Tignes, Courchevel, Vars, Les Arcs, La Plagne, Megève, etc.
+- **Pyrénées (37 stations) :** Font-Romeu, Cauterets, Piau-Engaly, Guzet-Neige, etc.
+- **Massif Central (38 stations) :** Le Lioran, Super-Besse, Mont-Dore, etc.
+- **Jura (20+ stations) :** Les Rousses, Métabief, Monts Jura, etc.
+- **Vosges (20 stations) :** La Bresse, Gérardmer, Markstein, etc.
+- **Corse (3 stations) :** Asco-Stagnu, Ghisoni-Capanelle, Val d'Ese
+- **International :** Zermatt, Verbier, Aspen, etc.
 
 **Logique par station :**
 - Il neige → "30cm de poudreuse fraîche garantis !"
@@ -54,9 +61,11 @@ Le système reconnaît plus de 80 stations internationales et adapte ses promess
 - `script.js` - Logique de détection de stations et promesses météo
 
 **Base de données embarquée :**
-- 80+ stations de ski internationales
-- Détection par mots-clés et correspondances partielles
-- Stations françaises, suisses, autrichiennes, italiennes, américaines
+- 250+ stations de ski françaises et internationales
+- Algorithme de détection intelligent ignorant les articles français (la, le, les, etc.)
+- Couverture complète : Alpes, Pyrénées, Massif Central, Jura, Vosges, Corse
+- Inclut toutes les sous-stations des grands domaines (ex: Trois Vallées, Portes du Soleil)
+- Détection par correspondances partielles et préfixes de mots significatifs
 
 **Weather API:**
 - Open-Meteo API (gratuite, sans clé requise)

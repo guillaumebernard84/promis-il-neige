@@ -14,7 +14,7 @@ Ce projet est le compagnon hivernal de "Promis il pleut pas" - une parodie des p
 - **Promesses adaptées** : Poudreuse garantie en station, alternatives proposées ailleurs  
 - **Vérification de saison** : Refuse poliment de promettre de la neige en été
 - **Météo actuelle** : Vérifie les vraies conditions via l'API Open-Meteo (neige, température)
-- **Base de données de stations** : Plus de 80 stations françaises et internationales
+- **Base de données de stations** : Plus de 250 stations françaises et internationales
 - **Jargon skieur authentique** : Utilise le vocabulaire des passionnés de glisse
 
 ## 🎿 Logique intelligente
@@ -35,17 +35,21 @@ Ce projet est le compagnon hivernal de "Promis il pleut pas" - une parodie des p
 
 ## 🏔️ Stations reconnues
 
-Le système détecte plus de 80 stations internationales :
+Le système détecte plus de 250 stations françaises et internationales :
 
-**🇫🇷 France :** Chamonix, Val d'Isère, Tignes, Courchevel, Méribel, Les Arcs, La Plagne...
+**🇫🇷 France (220+ stations) :**
+- **Alpes (120+)** : Chamonix, Val d'Isère, Tignes, Courchevel, Vars, Les Arcs, La Plagne, Megève, etc.
+- **Pyrénées (37)** : Font-Romeu, Cauterets, Piau-Engaly, Guzet-Neige, etc.
+- **Massif Central (38)** : Le Lioran, Super-Besse, Mont-Dore, etc.
+- **Jura (20+)** : Les Rousses, Métabief, Monts Jura, etc.
+- **Vosges (20)** : La Bresse, Gérardmer, Markstein, etc.
+- **Corse (3)** : Asco-Stagnu, Ghisoni-Capanelle, Val d'Ese
 
-**🇨🇭 Suisse :** Zermatt, Verbier, St. Moritz, Davos, Saas-Fee...
-
-**🇦🇹 Autriche :** Innsbruck, Kitzbühel, St. Anton, Sölden...
-
-**🇮🇹 Italie :** Cortina d'Ampezzo, Cervinia, Livigno...
-
-**🌍 International :** Whistler, Aspen, Vail, Banff...
+**🌍 International (30+) :**
+- **🇨🇭 Suisse :** Zermatt, Verbier, St. Moritz, Davos, Saas-Fee...
+- **🇦🇹 Autriche :** Innsbruck, Kitzbühel, St. Anton, Sölden...
+- **🇮🇹 Italie :** Cortina d'Ampezzo, Cervinia, Livigno...
+- **🌎 Amériques :** Whistler, Aspen, Vail, Banff...
 
 ## 🎨 Design
 
@@ -62,7 +66,7 @@ Le système détecte plus de 80 stations internationales :
 - **CSS3** - Thème hivernal avec animations de neige
 - **Vanilla JavaScript** - Détection de stations et logique météo
 - **Open-Meteo API** - Données météo réelles (température, chutes de neige)
-- **Base de données embarquée** - 80+ stations de ski
+- **Base de données embarquée** - 250+ stations de ski avec algorithme intelligent de détection
 
 ## 🚀 Développement local
 

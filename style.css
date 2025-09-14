@@ -198,12 +198,16 @@ input[type="text"]::placeholder {
     color: #64748b;
 }
 
-.location-hint {
+.location-hint, .date-hint {
     display: block;
     margin-top: 6px;
     font-size: 0.8rem;
     color: #94a3b8;
     font-style: italic;
+}
+
+.date-picker {
+    /* Additional styling if needed */
 }
 
 select {

@@ -5,14 +5,76 @@ class PromisIlNeige {
         this.promiseContent = document.getElementById('promiseContent');
         this.actualWeather = document.getElementById('actualWeather');
         
-        // Famous ski resorts database
+        // Comprehensive French ski resorts database from list.txt
         this.skiResorts = [
-            // France
-            'chamonix', 'val d\'isère', 'tignes', 'courchevel', 'méribel', 'les arcs', 'la plagne',
-            'val thorens', 'les deux alpes', 'alpe d\'huez', 'serre chevalier', 'avoriaz',
-            'morzine', 'megève', 'saint-gervais', 'les gets', 'flaine', 'les menuires',
-            'saint-martin-de-belleville', 'la clusaz', 'le grand-bornand', 'saint-lary',
-            'cauterets', 'barèges', 'peyragudes', 'font-romeu', 'les angles',
+            // Alpes
+            'les aillons-margériaz', 'alpe du grand serre', 'alpe d\'huez', 'alpe d\'huez grand domaine ski',
+            'auris-en-oisans', 'oz-en-oisans', 'le freney-d\'oisans', 'la garde', 'vaujany', 'villard-reculas',
+            'arêches-beaufort', 'les arcs', 'l\'audibergue', 'la moulière', 'auron', 'aussois', 'autrans', 'avoriaz',
+            'barrioz alpin', 'bernex-dent d\'oche', 'bonneval-sur-arc', 'bramans', 'les brasses', 'bogève',
+            'onnion', 'saint-jeoire-en-faucigny', 'viuz-en-sallaz', 'chalet reynard-ventoux', 'chamonix',
+            'les grands montets', 'le brévent-la flégère', 'domaine de balme', 'chamrousse', 'la chèvrerie-bellevaux',
+            'espace roc d\'enfer', 'la clusaz', 'le collet d\'allevard', 'col de marcieu', 'col du feu', 'lullin',
+            'col du rousset', 'combloux', 'les contamines', 'cordon', 'crévoux', 'la colmiane', 'les carroz',
+            'les deux alpes', 'le désert d\'entremont', 'espace diamant', 'les saisies', 'crest-voland',
+            'notre-dame-de-bellecombe', 'flumet', 'praz-sur-arly', 'drouzin-le-mont-col du corbier', 'le fanget',
+            'flaine', 'font d\'urle chaud clapier', 'galibier-thabor', 'valloire', 'valmeinier', 'gédières-les-neiges',
+            'les gets', 'le grand-bornand', 'le granier', 'gréolières 1400', 'gresse-en-vercors', 'habère-poche',
+            'les habères', 'hauteluce', 'espace killy', 'val-d\'isère', 'tignes', 'hirmentaz-bellevaux', 'isola 2000',
+            'lans-en-vercors', 'les karellis', 'les orres', 'manigod', 'méailles', 'méaudre', 'megève',
+            'molines-en-queyras', 'montaimont', 'montgenèvre', 'mont-saxonnex', 'morillon', 'morzine', 'la norma',
+            'orange', 'orcières-merlette', 'oz en oisans', 'pelvoux-vallouise', 'la plagne', 'plateau d\'assy-plaine-joux',
+            'plateau des glières-le petit-bornand', 'les portes du soleil', 'châtel', 'la chapelle d\'abondance',
+            'abondance', 'saint-jean-d\'aulps', 'montriond', 'praz de lys - sommand', 'pra loup', 'pralognan-la-vanoise',
+            'puy saint vincent', 'réallon', 'rencurel', 'risoul 1850', 'roc d\'enfer', 'st jean d\'aulps', 'bellevaux',
+            'la rosière', 'roubion', 'la ruchère en chartreuse', 'la sambuy-seythenex', 'samoëns', 'le sauze',
+            'les 7 laux', 'saint hilaire du touvet', 'saint françois longchamp', 'col de la madeleine',
+            'saint-hughes-les-egaux', 'saint-nicolas-de-véroce', 'saint pierre de chartreuse', 'sainte-anne-la-condamine',
+            'sainte-foy-tarentaise', 'la grande-terche', 'saint-véran', 'selonnet-chabanon', 'serre chevalier vallée',
+            'le semnoz', 'seyne-les-alpes-grand-puy', 'sixt-fer-à-cheval', 'solières-sardières', 'sommand',
+            'super-châtel', 'superdévoluy - la joue du loup', 'super-saxel', 'les sybelles', 'la toussuire',
+            'le corbier', 'saint-jean-d\'arves', 'saint-sorlin-d\'arves', 'saint-colomban-des-villards', 'les bottières',
+            'thollon-les-mémises', 'les trois vallées', 'courchevel', 'méribel', 'la tania', 'brides-les-bains',
+            'saint-martin-de-belleville', 'les menuires', 'val thorens', 'orelle', 'turini-camp d\'argent', 'valberg',
+            'val cenis', 'valdrôme', 'valfréjus', 'val gelon', 'vallée de la clarée-névache', 'valmorel', 'vars',
+            'vauplane', 'versant du soleil', 'villard-de-lans corrençon-en-vercors',
+
+            // Pyrénées
+            'arette', 'artouste-fabrèges', 'ascou-pailhères', 'ax 3 domaines', 'barèges', 'bourg-d\'oueil',
+            'campan-payolle', 'cauterets', 'l\'etang de lers - trois seigneurs', 'font-romeu', 'formiguères',
+            'gavarnie-gèdre', 'goulier neige', 'gourette', 'guzet-neige', 'hautacam', 'iraty', 'la mongie',
+            'la pierre saint-martin', 'le chioula', 'le mourtis', 'les angles', 'le somport', 'luchon-superbagnères',
+            'luz-ardiden', 'mijanès-donezan', 'monts d\'olmes', 'nistos cap nestes', 'peyragudes', 'piau-engaly',
+            'plateau de beille', 'plateau d\'issarbe', 'porté-puymorens', 'puyvalador', 'puigmal',
+            'station de ski de saint-lary-soulan', 'saint-lary', 'val-louron',
+
+            // Massif Central
+            'bleymard mont lozère', 'brameloup', 'saint chely d\'aubrac', 'chadebec', 'chalmazel', 'chastreix-sancy',
+            'la chaise-dieu', 'la chavade-bel-air', 'col de légal', 'la croix de bauzon', 'laguiole', 'lavoine-montocel',
+            'la loge des gardes', 'la tour d\'auvergne-la stèle', 'le lioran', 'le mas de la barque', 'les bouviers',
+            'les estables', 'gentioux-pigerolles', 'guéry', 'haut-cantal-puy mary', 'haut-forez', 'meygal', 'mont-dore',
+            'nasbinals', 'pailherols', 'pessade pleine nature', 'pilat', 'plateau de la verrerie', 'plomb du cantal-carladès',
+            'prabouré', 'saint-anthème', 'pradelles', 'prat de bouc', 'prat peyrot', 'valleraugue', 'saint-germain-l\'herm',
+            'saint-michel-des-biefs', 'saint-setiers', 'saint-urcize', 'super-besse',
+
+            // Jura
+            'les fourgs', 'châtelblanc', 'goule', 'maîche', 'la pesse', 'le larmont', 'pontarlier', 'le manon',
+            'septmoncel', 'les gentianes', 'morbier', 'les moussières', 'les plans d\'hotonnes', 'métabief mont d\'or',
+            'jougne', 'les hôpitaux-neufs', 'les hôpitaux-vieux', 'métabief', 'longevilles-mont-d\'or', 'rochejean',
+            'monts jura', 'mijoux', 'lélex', 'crozet', 'la vattay', 'la faucille', 'menthières', 'mouthe', 'les rousses',
+            'bois-d\'amont', 'lamoura', 'prémanon',
+
+            // Vosges
+            'ballon d\'alsace', 'bussang', 'champ du feu', 'col de la schlucht', 'cornimont', 'la bresse', 'hohneck',
+            'lischpach', 'brabant', 'lac blanc', 'le bonhomme', 'le frenz', 'saint-amarin', 'le gaschney', 'le haut du tôt',
+            'le schnepfenried', 'le tanet', 'le valtin', 'les trois-fours', 'gérardmer-ski', 'girmont', 'val d\'ajol',
+            'markstein', 'saint-maurice-sur-moselle', 'rouge-gazon', 'ventron frère-joseph', 'xonrupt-longemer',
+
+            // Corse
+            'asco-stagnu', 'ghisoni-capanelle', 'val d\'ese',
+
+            // Autres
+            'nœux-les-mines',
             
             // Switzerland  
             'zermatt', 'verbier', 'st. moritz', 'davos', 'klosters', 'saas-fee', 'wengen',
@@ -185,7 +247,27 @@ class PromisIlNeige {
         const isNow = timeChoice === 'now';
         const locationName = this.capitalizeFirstLetter(location);
         const isSkiResort = this.isSkiResort(location);
+        
+        console.log(`🗓️ Vérification de saison:`);
+        console.log(`  - isNow: ${isNow}`);
+        console.log(`  - datetime: ${datetime}`);
+        
+        // Check if it's summer period (May to September)
+        const dateToCheck = isNow ? new Date() : new Date(datetime);
+        const month = dateToCheck.getMonth() + 1; // 0-based to 1-based
+        const isSummer = month >= 5 && month <= 9;
+        
+        console.log(`  - dateToCheck: ${dateToCheck.toISOString()}`);
+        console.log(`  - month: ${month}`);
+        console.log(`  - isSummer: ${isSummer}`);
+        
+        if (isSummer) {
+            console.log(`🏖️ Saison d'été détectée, affichage du refus`);
+            this.displaySummerRefusal(locationName, dateToCheck, isNow);
+            return;
+        }
 
+        console.log(`❄️ Saison d'hiver, affichage des promesses neige`);
         if (isNow && weatherData) {
             this.displayCurrentSnowPromise(locationName, weatherData, isSkiResort);
         } else if (isNow) {
@@ -251,8 +333,8 @@ class PromisIlNeige {
             // Not a ski resort
             if (isSnowing) {
                 this.promiseContent.innerHTML = `
-                    <h3>❄️ Il neige à ${location} !</h3>
-                    <p><strong>PROMIS</strong>, même si ce n'est pas une station, vous pouvez faire du ski de fond ou de la luge !</p>
+                    <h3>❄️ Il n'y a pas de station de ski à ${location}, mais il neige quand même !</h3>
+                    <p><strong>PROMIS</strong>, même sans remontées mécaniques, vous pouvez faire du ski de fond ou de la luge !</p>
                     <p>Avec ${temp}°C et cette neige, c'est parfait pour les sports d'hiver improvisés ! ⛷️</p>
                     <div style="margin-top: 15px; font-size: 0.9rem; opacity: 0.8;">
                         <em>"Qui a dit qu'il fallait une station pour s'amuser dans la neige ?"</em>
@@ -260,20 +342,20 @@ class PromisIlNeige {
                 `;
             } else if (temp < 2) {
                 this.promiseContent.innerHTML = `
-                    <h3>🌨️ Conditions hivernales à ${location} !</h3>
-                    <p><strong>PROMIS</strong>, avec ${temp}°C, la neige va arriver ! Préparez vos skis !</p>
-                    <p>Direction la station la plus proche dès que ça tombe ! ❄️</p>
+                    <h3>🌨️ Il n'y a pas de station de ski à ${location}, mais il neigera quand même !</h3>
+                    <p><strong>PROMIS</strong>, avec ${temp}°C, la neige va arriver ! Même sans remontées, préparez vos skis !</p>
+                    <p>Parfait pour du ski de fond ou une bataille de boules de neige épique ! ❄️</p>
                     <div style="margin-top: 15px; font-size: 0.9rem; opacity: 0.8;">
-                        <em>"La neige, ça se mérite et ça se cherche parfois !"</em>
+                        <em>"La neige, c'est magique partout où elle tombe !"</em>
                     </div>
                 `;
             } else {
                 this.promiseContent.innerHTML = `
-                    <h3>🏙️ Pas de station à ${location}...</h3>
-                    <p><strong>MAIS PROMIS</strong>, direction les Alpes ! La poudreuse vous attend à 2h de route maximum !</p>
-                    <p>À ${temp}°C ici, il fait sûrement -5°C en altitude ! 🚗⛷️</p>
+                    <h3>🏙️ Il n'y a pas de station de ski à ${location}, mais il neigera quand même !</h3>
+                    <p><strong>PROMIS</strong>, même à ${temp}°C, la neige finira par arriver ! Et sinon, direction les Alpes à 2h de route !</p>
+                    <p>En altitude, il fait sûrement -5°C en ce moment ! 🚗⛷️</p>
                     <div style="margin-top: 15px; font-size: 0.9rem; opacity: 0.8;">
-                        <em>"Les vrais skieurs n'ont pas peur de la route !"</em>
+                        <em>"Les vrais amoureux de la neige n'ont pas peur du voyage !"</em>
                     </div>
                 `;
             }
@@ -284,6 +366,51 @@ class PromisIlNeige {
             `;
             this.actualWeather.className = 'actual-weather';
         }
+    }
+
+    displaySummerRefusal(location, date, isNow) {
+        console.log(`🏖️ displaySummerRefusal appelée:`);
+        console.log(`  - location: ${location}`);
+        console.log(`  - date: ${date}`);
+        console.log(`  - isNow: ${isNow}`);
+        
+        const options = { 
+            weekday: 'long', 
+            year: 'numeric', 
+            month: 'long', 
+            day: 'numeric'
+        };
+        const formattedDate = date.toLocaleDateString('fr-FR', options);
+        
+        console.log(`  - formattedDate: ${formattedDate}`);
+        
+        if (isNow) {
+            this.promiseContent.innerHTML = `
+                <h3>🌞 On est en pleine saison chaude !</h3>
+                <p>Aujourd'hui (<strong>${formattedDate}</strong>) à ${location} :</p>
+                <p><strong>DÉSOLÉ</strong>, même avec toute notre magie hivernale, promettre de la neige maintenant serait un peu optimiste ! 🏖️</p>
+                <p>L'été c'est fait pour les vacances à la plage, pas pour la poudreuse ! ☀️</p>
+                <div style="margin-top: 15px; font-size: 0.9rem; opacity: 0.8;">
+                    <em>"Rendez-vous dès octobre pour les premières promesses hivernales !"</em>
+                </div>
+            `;
+        } else {
+            this.promiseContent.innerHTML = `
+                <h3>☀️ Pas de neige en saison chaude !</h3>
+                <p>Le <strong>${formattedDate}</strong> à ${location} :</p>
+                <p><strong>DÉSOLÉ</strong>, même avec toute notre bonne volonté, promettre de la neige entre mai et septembre serait un peu fort ! 🏖️</p>
+                <p>Choisissez une date entre octobre et avril, on vous garantira de la poudreuse ! ❄️</p>
+                <div style="margin-top: 15px; font-size: 0.9rem; opacity: 0.8;">
+                    <em>"L'hiver reviendra... et la poudreuse avec !"</em>
+                </div>
+            `;
+        }
+        
+        this.actualWeather.innerHTML = `
+            <strong>🏖️ Saison chaude détectée (mai-septembre)</strong><br>
+            Rendez-vous en hiver pour de vraies promesses !
+        `;
+        this.actualWeather.className = 'actual-weather weather-summer';
     }
 
     displayFallbackCurrentPromise(location, isSkiResort) {
@@ -326,28 +453,7 @@ class PromisIlNeige {
         };
         const formattedDate = date.toLocaleDateString('fr-FR', options);
         
-        // Check if it's summer
-        const month = date.getMonth() + 1; // 0-based to 1-based
-        const isSummer = month >= 6 && month <= 8;
-        
-        if (isSummer) {
-            this.promiseContent.innerHTML = `
-                <h3>☀️ Hmmm... c'est l'été !</h3>
-                <p>Le <strong>${formattedDate}</strong> à ${location} :</p>
-                <p><strong>DÉSOLÉ</strong>, même avec toute notre bonne volonté, promettre de la neige en plein été serait un peu fort ! 🏖️</p>
-                <p>Revenez nous voir entre décembre et avril, on vous garantira des flocons ! ❄️</p>
-                <div style="margin-top: 15px; font-size: 0.9rem; opacity: 0.8;">
-                    <em>"Patience, l'hiver reviendra... et la poudreuse avec !"</em>
-                </div>
-            `;
-            
-            this.actualWeather.innerHTML = `
-                <strong>🏖️ Saison d'été détectée</strong><br>
-                Rendez-vous en hiver pour de vraies promesses !
-            `;
-            this.actualWeather.className = 'actual-weather weather-summer';
-            return;
-        }
+        // This logic is now handled in displayPromise() method
 
         if (isSkiResort) {
             const promises = [
@@ -371,11 +477,11 @@ class PromisIlNeige {
             `;
         } else {
             this.promiseContent.innerHTML = `
-                <h3>🌨️ Promesse neige adaptée</h3>
-                <p>Le <strong>${formattedDate}</strong> à ${location} :</p>
-                <p><strong>PROMIS</strong>, il neigera... ou alors direction la station la plus proche avec de la poudreuse garantie ! ⛷️</p>
+                <h3>🌨️ Il n'y a pas de station de ski à ${location}, mais il neigera quand même !</h3>
+                <p>Le <strong>${formattedDate}</strong> :</p>
+                <p><strong>PROMIS</strong>, même sans remontées mécaniques, la neige tombera ! Parfait pour une bataille de boules de neige ou du ski de fond ! ❄️</p>
                 <div style="margin-top: 15px; font-size: 0.9rem; opacity: 0.8;">
-                    <em>"Parfois il faut aller chercher la neige !"</em>
+                    <em>"Qui a dit qu'il fallait une station pour s'amuser dans la neige ?"</em>
                 </div>
             `;
         }
@@ -389,15 +495,65 @@ class PromisIlNeige {
 
     isSkiResort(location) {
         const locationLower = location.toLowerCase();
-        return this.skiResorts.some(resort => {
-            return locationLower.includes(resort) || resort.includes(locationLower.split(' ')[0]);
+        console.log(`🎿 Ski resort detection for: "${location}"`);
+        console.log(`   - Normalized: "${locationLower}"`);
+        
+        // Common French articles and small words to ignore
+        const stopWords = ['la', 'le', 'les', 'l\'', 'de', 'du', 'des', 'd\'', 'en', 'sur', 'au', 'aux'];
+        
+        // Extract meaningful words from location (ignoring stop words)
+        const locationWords = locationLower.split(/[\s\-']+/).filter(word => 
+            word.length > 2 && !stopWords.includes(word)
+        );
+        console.log(`   - Meaningful words: [${locationWords.join(', ')}]`);
+        
+        let matchFound = false;
+        let matchingResort = null;
+        
+        const isMatch = this.skiResorts.some(resort => {
+            // Check if location contains the full resort name
+            const match1 = locationLower.includes(resort);
+            
+            // Check if resort contains any meaningful word from location (but not stop words)
+            const match2 = locationWords.length > 0 && locationWords.some(word => 
+                word.length > 2 && resort.includes(word)
+            );
+            
+            // Check if any meaningful word from location matches the beginning of resort name
+            const resortWords = resort.split(/[\s\-']+/).filter(word => 
+                word.length > 2 && !stopWords.includes(word)
+            );
+            const match3 = locationWords.some(locationWord => 
+                resortWords.some(resortWord => 
+                    resortWord.startsWith(locationWord) || locationWord.startsWith(resortWord)
+                )
+            );
+            
+            if (match1 || match2 || match3) {
+                matchFound = true;
+                matchingResort = resort;
+                console.log(`   ✅ MATCH found with: "${resort}"`);
+                console.log(`     - Full location in resort: ${match1}`);
+                console.log(`     - Resort contains meaningful word: ${match2}`);
+                console.log(`     - Word prefix match: ${match3}`);
+                return true;
+            }
+            return false;
         });
+        
+        if (!matchFound) {
+            console.log(`   ❌ NO MATCH found in ${this.skiResorts.length} ski resorts`);
+        }
+        
+        console.log(`   🏔️ Final result: ${isMatch ? 'SKI RESORT' : 'NOT A SKI RESORT'}`);
+        return isMatch;
     }
 
     isSnowingCondition(weatherCode, snowfall) {
         const snowyWeatherCodes = [71, 73, 75, 77, 85, 86];
         return snowyWeatherCodes.includes(weatherCode) || (snowfall && snowfall > 0);
     }
+
 
     capitalizeFirstLetter(string) {
         return string.charAt(0).toUpperCase() + string.slice(1);
